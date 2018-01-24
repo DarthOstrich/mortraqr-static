@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title MorTraqr
+    link(rel='stylesheet', href='/style.css')
+    link(rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png")
+    link(rel="manifest" href="/images/favicons/manifest.json")
+    link(rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5")
+    meta(name="theme-color" content="#ffffff")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    block header
+      header
+        span
+          a(href="/")
+            img(src="/images/logo-gray.png", id="logo" alt="MorTraqr")
+        nav
+          ul
+            li
+              a(href="/login" class="a__light") Login
+            li
+              a(href="/register" class="a__light") Register
+    block hero
+    main.container
+      block content
+    block footer
+      footer
+        h4 Copyright MorTraqr
+    script(src="https://use.fontawesome.com/a5a7a6bd87.js")
+    script(src="/dist/App.bundle.js")
