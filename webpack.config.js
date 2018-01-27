@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const autoprefixer = require('autoprefixer');
 
 const pug = {
-  test: /\.pug$/, // see how we match anything that ends in `.js`? Cool
+  test: /\.pug$/,
   use: ['html-loader', 'pug-html-loader']
 };
 
@@ -24,8 +24,19 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'MorTraqr',
-      template: './src/index.pug'
+      filename: 'index.html',
+      template: 'src/index.pug',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'terms.html',
+      template: 'src/terms.pug',
+      inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: 'src/404.pug',
+      inject: false
     })
   ]
 };
