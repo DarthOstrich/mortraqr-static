@@ -22,6 +22,20 @@ All the CSS is managed through the main repo [here](https://github.com/DarthOstr
 
 Upload the changes to [this](http://mortraqr.com.s3-website-us-west-2.amazonaws.com) bucket.
 
+## Upload to S3 bucket
+
+Check for buckets
+
+```
+aws s3 ls
+```
+
+Run a sync. The excludes should have all the files that need to be ignored, however if you need to add any more, or less, use the `--exclude` tag.
+
+```
+aws s3 sync . s3://mortraqr.com/ --exclude 'node_modules/*' --exclude '.git/*' --exclude '.DS_Store' --exclude 'package.json' --exclude '.gitignore' --exclude 'yarn.lock' --exclude 'webpack.config.js'
+```
+
 ## Troubleshooting
 
 The website is routed through Cloudfront, so it may take a while for the changes to take place.
