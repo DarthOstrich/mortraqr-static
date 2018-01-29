@@ -4,7 +4,8 @@
   "description": "Static front page for MorTraqr s3 bucket",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack -p --watch"
+    "dev": "webpack --watch",
+    "prod": "webpack -p"
   },
   "repository": "git@github.com:DarthOstrich/mortraqr-static.git",
   "author": "Jared <jarednutt@outlook.com>",
