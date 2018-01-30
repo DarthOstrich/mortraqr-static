@@ -30,6 +30,8 @@ Check for buckets
 aws s3 ls
 ```
 
+This is supposed to work, but it doesn't seem to function well:
+
 Run a sync. The excludes should have all the files that need to be ignored, however if you need to add any more, or less, use the `--exclude` tag.
 
 ```
