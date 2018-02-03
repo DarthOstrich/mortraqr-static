@@ -22,6 +22,12 @@ All the CSS is managed through the main repo [here](https://github.com/DarthOstr
 
 Upload the changes to [this](http://mortraqr.com.s3-website-us-west-2.amazonaws.com) bucket.
 
+### Run webpack production first before uploading
+
+```
+npm run prod
+```
+
 ## Upload to S3 bucket
 
 Check for buckets
@@ -30,13 +36,15 @@ Check for buckets
 aws s3 ls
 ```
 
-This is supposed to work, but it doesn't seem to function well:
+You can run a sync of the changes. The `dist` folder needs to get synced with the home directory of the bucket.
 
 Run a sync. The excludes should have all the files that need to be ignored, however if you need to add any more, or less, use the `--exclude` tag.
 
 ```
-aws s3 sync . s3://mortraqr.com/ --exclude 'node_modules/*' --exclude '.git/*' --exclude '.DS_Store' --exclude 'package.json' --exclude '.gitignore' --exclude 'yarn.lock' --exclude 'webpack.config.js'
+aws s3 sync ./dist s3://mortraqr.com/ --exclude '.DS_Store'
 ```
+
+<!-- aws s3 sync ./dist s3://mortraqr.com/ --exclude 'node_modules/*' --exclude '.git/*' --exclude '.DS_Store' --exclude 'package.json' --exclude '.gitignore' --exclude 'yarn.lock' --exclude 'webpack.config.js' --exclude 'src/*' -->
 
 ## Troubleshooting
 
