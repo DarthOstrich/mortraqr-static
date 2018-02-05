@@ -37,6 +37,11 @@ const config = {
       filename: '404.html',
       template: 'src/404.pug',
       inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'maint.html',
+      template: 'src/maint.pug',
+      inject: false
     })
   ]
 };
