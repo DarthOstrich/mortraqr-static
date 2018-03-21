@@ -42,6 +42,11 @@ const config = {
       filename: 'maint.html',
       template: 'src/maint.pug',
       inject: false
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'help.html',
+      template: 'src/help.pug',
+      inject: false
     })
   ]
 };
